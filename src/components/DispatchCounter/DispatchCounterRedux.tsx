@@ -58,7 +58,7 @@ const DispatchCounterReduxWithoutStore: React.FC = () => {
       <Reset onClick={() => dispatch(reset())}>RESET</Reset>
       <CustomInput>
         <input type="number" onChange={(e) => setFreeFieldValue(e.target.value)} />
-        <button onClick={() => calculateValue(Number(freeFieldValue))}>ADD</button>
+        <button onClick={() => handleCalculateValueClick(Number(freeFieldValue))}>ADD</button>
       </CustomInput>
     </Container>
   );
