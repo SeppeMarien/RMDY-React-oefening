@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { HTMLProps } from 'react';
 import { Container } from './Reuseable.styles';
 
-interface Props {
+interface Props extends HTMLProps<HTMLButtonElement> {
   label: string;
 }
 
