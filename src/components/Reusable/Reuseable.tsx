@@ -1,15 +1,15 @@
-import React, { HTMLProps } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import { Container } from './Reuseable.styles';
 
-interface Props extends HTMLProps<HTMLButtonElement> {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
 }
 
-const LabelButton: React.FC<Props> = (props) => {
+const LabelButton: React.FC<Props> = ({ label, ...restProps }) => {
   return (
     <>
-      <p>{props.label.toLocaleUpperCase()}</p>
-      <button>OVER HERE</button>
+      <p>{label.toLocaleUpperCase()}</p>
+      <button {...restProps}>OVER HERE</button>
     </>
   );
 };
@@ -17,7 +17,11 @@ const LabelButton: React.FC<Props> = (props) => {
 const Reuseable: React.FC = () => {
   return (
     <Container>
-      <LabelButton label="Click the button below" />
+      <LabelButton
+        disabled
+        onClick={() => console.log('>>>>>>>>>>>>>>>>>>>>>>>')}
+        label="Click the button below"
+      />
     </Container>
   );
 };
